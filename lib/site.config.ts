@@ -18,10 +18,10 @@ export const siteConfig = {
      * Describe what the game is and that it's free to play online.
      */
     description:
-      "Play Basketball Bros online for free! A fast-paced 1v1 arcade basketball game with crazy dunks, 33 unlockable characters, and online multiplayer. No download — jump straight in.",
+      "Play Basketball Bros online for free — unblocked! A fast-paced 1v1 arcade basketball game with crazy dunks, 33 unlockable characters, and online multiplayer. No download.",
 
     /** Comma-separated keywords for the homepage. */
-    keywords: ["basketball bros", "basketbros", "basketball game free", "play basketball bros online", "1v1 basketball", "multiplayer basketball"],
+    keywords: ["basketball bros", "basketbros", "basketball game free", "play basketball bros online", "1v1 basketball", "multiplayer basketball", "basketball bros unblocked"],
 
     /** Social sharing image, 1200x630px. Replace /public/og-image.png. */
     ogImage: "/og-image.png",

@@ -11,11 +11,11 @@ const GAME_SECTIONS = [
     id: "what-is",
     heading: "What is Basketball Bros?",
     body: [
-      "Basketball Bros is a high-energy, arcade-style 1v1 basketball game that you can play right in your browser — no downloads, no installs, just pure hoops action. Built by Blue Wizard Digital (the same team behind ShellShockers.io), this fast-paced game strips basketball down to its most fun elements: dribbling, shooting, dunking, and a little bit of friendly competition.",
+      "Basketball Bros is a high-energy, arcade-style 1v1 basketball game that you can play right in your browser — no downloads, no installs, just pure hoops action. It's fully unblocked, so you can jump in and play from school, work, or anywhere without restrictions. Built by Blue Wizard Digital, this fast-paced game strips basketball down to its most fun elements: dribbling, shooting, dunking, and a little bit of friendly competition.",
       "Whether you're looking to kill five minutes or go head-to-head against friends online, Basketball Bros delivers. The controls are simple to learn but hard to master, and with 33 unique characters to unlock — each with their own look and style — there's always a reason to come back for one more game.",
     ],
     images: [
-      { src: "/images/gameplay-1.jpg", alt: "Basketball Bros gameplay - two players competing on the court" },
+      { src: "/images/basketballbros-desc-1.jpeg", alt: "Basketball Bros gameplay - two players competing on the court" },
     ],
   },
   {
@@ -26,7 +26,7 @@ const GAME_SECTIONS = [
       "The game gives you two control layouts: WASD + G for the left hand, or Arrow keys + L for the right. Pick whichever feels natural and get on the court. Each match is quick — usually just a couple of minutes — so it's perfect for sneaking in a game between classes, during lunch, or whenever you need a break.",
     ],
     images: [
-      { src: "/images/controls-guide.jpg", alt: "Basketball Bros keyboard controls guide" },
+      { src: "/images/basketballbros-desc-2.jpeg", alt: "Basketball Bros keyboard controls guide" },
     ],
   },
   {
@@ -37,7 +37,7 @@ const GAME_SECTIONS = [
       "If you're new or just want to warm up, Shooting Practice lets you work on your timing without the pressure. And when you're ready for the real deal, hop into Online Multiplayer: host a private match, share the invite code with your friends, and battle it out. There's even a ranked-like system that tracks your wins as you climb the leaderboard.",
     ],
     images: [
-      { src: "/images/game-modes.jpg", alt: "Basketball Bros game mode selection screen" },
+      { src: "/images/basketballbros-desc-3.jpeg", alt: "Basketball Bros game mode selection screen" },
     ],
   },
   {
@@ -48,21 +48,18 @@ const GAME_SECTIONS = [
       "But it's not just about who's on the court — it's about how they look. You can customize everything: jerseys, shorts, sneakers, socks, logos, and even the ball you play with. Want to match your favorite team's colors? Go for it. Want to look absolutely ridiculous? That's an option too. It's your baller — dress them how you want.",
     ],
     images: [
-      { src: "/images/characters.jpg", alt: "Basketball Bros character roster and customization options" },
+      { src: "/images/basketballbros-desc-4.jpeg", alt: "Basketball Bros character roster and customization options" },
     ],
   },
 ];
 
-function ImagePlaceholder({ alt, className = "" }: { alt: string; className?: string }) {
+function ImagePlaceholder({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
   return (
-    <div className={`rounded-xl overflow-hidden bg-surface border border-gray-200/60 shadow-sm flex items-center justify-center ${className}`}>
-      <div className="text-center p-6">
-        <svg className="w-10 h-10 mx-auto mb-2 text-primary/25" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-13.5 0l5.409-5.409a2.25 2.25 0 013.182 0L15.75 14.25M3 18h18M18 6h.008v.008H18V6z" />
-        </svg>
-        <p className="text-xs text-text-dark/25">{alt}</p>
-      </div>
-    </div>
+    <img
+      src={src}
+      alt={alt}
+      className={`rounded-xl object-cover bg-surface border border-gray-200/60 shadow-sm ${className}`}
+    />
   );
 }
 
@@ -86,9 +83,9 @@ const PRO_TIPS = [
 ];
 
 const GALLERY_IMAGES = [
-  { alt: "Basketball Bros in-game dunk scene", src: "/images/gallery-1.jpg" },
-  { alt: "Basketball Bros character selection screen", src: "/images/gallery-2.jpg" },
-  { alt: "Basketball Bros multiplayer match action", src: "/images/gallery-3.jpg" },
+  { alt: "Basketball Bros in-game dunk scene", src: "/images/gallery-1.jpeg" },
+  { alt: "Basketball Bros character selection screen", src: "/images/gallery-2.jpeg" },
+  { alt: "Basketball Bros multiplayer match action", src: "/images/gallery-3.jpeg" },
 ];
 
 export default function HomePage() {
@@ -115,7 +112,7 @@ export default function HomePage() {
                 </div>
                 {section.images?.[0] && (
                   <div className="flex-shrink-0 w-full md:w-[340px]">
-                    <ImagePlaceholder alt={section.images[0].alt} className="aspect-[4/3]" />
+                    <ImagePlaceholder src={section.images[0].src} alt={section.images[0].alt} className="aspect-[4/3]" />
                   </div>
                 )}
               </div>
@@ -148,10 +145,103 @@ export default function HomePage() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {GALLERY_IMAGES.map((img, gi) => (
-                <ImagePlaceholder key={gi} alt={img.alt} className="aspect-[4/3]" />
+                <ImagePlaceholder key={gi} src={img.src} alt={img.alt} className="aspect-[4/3]" />
               ))}
             </div>
           </div>
+
+          {/* FAQ */}
+          <div>
+            <h2 className="font-heading font-bold text-2xl text-text-dark mb-4">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              <div className="bg-white rounded-lg border border-gray-200/60 overflow-hidden">
+                <details className="group">
+                  <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-heading font-bold text-text-dark hover:bg-gray-50 transition-colors">
+                    <span>Why isn&apos;t the game loading?</span>
+                    <svg className="w-4 h-4 text-text-dark/40 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-5 pb-4 text-sm text-text-dark/60 leading-relaxed">
+                    <p>First, check your internet connection and make sure the page isn&apos;t blocked by your network. Ad blockers and browser extensions sometimes interfere with game embeds — try disabling them or whitelisting basketballbros.site. Chrome is your best bet, but the game also runs on Firefox and Safari.</p>
+                  </div>
+                </details>
+              </div>
+
+              <div className="bg-white rounded-lg border border-gray-200/60 overflow-hidden">
+                <details className="group">
+                  <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-heading font-bold text-text-dark hover:bg-gray-50 transition-colors">
+                    <span>How do I play Basketball Bros?</span>
+                    <svg className="w-4 h-4 text-text-dark/40 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-5 pb-4 text-sm text-text-dark/60 leading-relaxed">
+                    <p>Jump right in! Use WASD or Arrow Keys to move, tap Up to jump, and tap Up again mid-air to shoot. Hit Space or Enter to block and steal on defense. Pick the 2 Players option to play a friend on the same keyboard, or hop into Online to challenge someone across the world. It takes about thirty seconds to learn and a lifetime to master that perfect step-back three.</p>
+                  </div>
+                </details>
+              </div>
+
+              <div className="bg-white rounded-lg border border-gray-200/60 overflow-hidden">
+                <details className="group">
+                  <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-heading font-bold text-text-dark hover:bg-gray-50 transition-colors">
+                    <span>Which browser works best?</span>
+                    <svg className="w-4 h-4 text-text-dark/40 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-5 pb-4 text-sm text-text-dark/60 leading-relaxed">
+                    <p>Chrome is the most reliable — it&apos;s what the game was primarily built and tested on. That said, Basketball Bros also runs well on Firefox and Safari. If you run into performance issues on a particular browser, switching to Chrome usually does the trick.</p>
+                  </div>
+                </details>
+              </div>
+
+              <div className="bg-white rounded-lg border border-gray-200/60 overflow-hidden">
+                <details className="group">
+                  <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-heading font-bold text-text-dark hover:bg-gray-50 transition-colors">
+                    <span>How do I unlock more characters?</span>
+                    <svg className="w-4 h-4 text-text-dark/40 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-5 pb-4 text-sm text-text-dark/60 leading-relaxed">
+                    <p>Win matches and you&apos;ll earn in-game currency to unlock new characters. There are 33 in total, and most are lighthearted references to real NBA stars — you&apos;ll spot familiar moves and nicknames as you go. Franchise Mode is the fastest way to rack up wins and currency, so start there if you&apos;re building out your roster.</p>
+                  </div>
+                </details>
+              </div>
+
+              <div className="bg-white rounded-lg border border-gray-200/60 overflow-hidden">
+                <details className="group">
+                  <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-heading font-bold text-text-dark hover:bg-gray-50 transition-colors">
+                    <span>Can I play Basketball Bros on my phone or tablet?</span>
+                    <svg className="w-4 h-4 text-text-dark/40 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-5 pb-4 text-sm text-text-dark/60 leading-relaxed">
+                    <p>Basketball Bros is designed for desktop and keyboard play — it really needs those physical keys for the controls to feel right. You can technically load it on a tablet with a keyboard attachment, but for the smoothest experience, stick to a laptop or desktop computer running Chrome.</p>
+                  </div>
+                </details>
+              </div>
+
+              <div className="bg-white rounded-lg border border-gray-200/60 overflow-hidden">
+                <details className="group">
+                  <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-heading font-bold text-text-dark hover:bg-gray-50 transition-colors">
+                    <span>Is Basketball Bros really free?</span>
+                    <svg className="w-4 h-4 text-text-dark/40 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-5 pb-4 text-sm text-text-dark/60 leading-relaxed">
+                    <p>Absolutely. No download, no sign-up, no credit card — just click and play. All 33 characters and game modes are available right from the start (characters unlock through gameplay, not paywalls). It&apos;s free basketball, plain and simple.</p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
         </section>
 
         <AdSlot type="banner" className="mt-12 mb-4" />
