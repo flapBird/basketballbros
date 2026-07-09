@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #FBF7F2;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Court floor texture - subtle repeating wood grain stripes */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(200, 170, 130, 0.04) 3px,
+      rgba(200, 170, 130, 0.04) 4px
+    ),
+    linear-gradient(
+      180deg,
+      #FDF9F4 0%,
+      #FBF7F2 40%,
+      #F7F0E5 100%
+    );
+  pointer-events: none;
+}
+
+/* Hero gradient - warm basketball court feel */
+.hero-gradient {
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 40%,
+    rgba(232, 93, 44, 0.12),
+    rgba(232, 93, 44, 0.04) 45%,
+    rgba(28, 58, 92, 0.03) 70%,
+    #FBF7F2 100%
+  );
+  border-bottom: 1px solid rgba(232, 93, 44, 0.08);
+}
+
+/* Floating blob decorations */
+.blob-decoration {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.10;
+  pointer-events: none;
+}
+
+.blob-decoration--1 {
+  width: 280px;
+  height: 280px;
+  top: 8%;
+  left: 5%;
+  background: radial-gradient(circle, #FF6B35 0%, transparent 70%);
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.blob-decoration--2 {
+  width: 200px;
+  height: 200px;
+  top: 15%;
+  right: 8%;
+  background: radial-gradient(circle, #1C3A5C 0%, transparent 70%);
+  animation: float 8s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+.blob-decoration--3 {
+  width: 180px;
+  height: 180px;
+  bottom: 12%;
+  left: 12%;
+  background: radial-gradient(circle, #FF6B35 0%, transparent 70%);
+  animation: float 8s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) scale(1.03);
+  }
+}
+
+/* Button hover effect */
+.btn-play {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease;
+}
+
+.btn-play:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 30px rgba(232, 93, 44, 0.4);
+}
+
+/* Subtle court-line divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(232, 93, 44, 0.15) 20%,
+    rgba(232, 93, 44, 0.25) 50%,
+    rgba(232, 93, 44, 0.15) 80%,
+    transparent
+  );
+}
