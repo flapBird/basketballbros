@@ -10,29 +10,30 @@ export default function GameEmbed() {
     const container = containerRef.current;
     if (!container) return;
 
-    let isOverGame = false;
-
-    const onMouseEnter = () => {
-      isOverGame = true;
-      document.body.style.overflow = "hidden";
-    };
-    const onMouseLeave = () => {
-      isOverGame = false;
-      document.body.style.overflow = "";
+    const preventWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
     };
 
-    container.addEventListener("mouseenter", onMouseEnter);
-    container.addEventListener("mouseleave", onMouseLeave);
+    const preventTouch = (e: TouchEvent) => {
+      // Allow single-finger touches (game interaction)
+      // but prevent touchmove from scrolling the page
+      if (e.cancelable) {
+        e.preventDefault();
+      }
+    };
+
+    container.addEventListener("wheel", preventWheel, { passive: false });
+    container.addEventListener("touchmove", preventTouch, { passive: false });
 
     return () => {
-      container.removeEventListener("mouseenter", onMouseEnter);
-      container.removeEventListener("mouseleave", onMouseLeave);
-      document.body.style.overflow = "";
+      container.removeEventListener("wheel", preventWheel);
+      container.removeEventListener("touchmove", preventTouch);
     };
   }, []);
 
   return (
-    <div className="w-full max-w-[1100px] mx-auto">
+    <div className="w-full max-w-[1000px] mx-auto">
       <div
         ref={containerRef}
         className="relative w-full overflow-hidden rounded-lg"
