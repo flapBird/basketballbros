@@ -87,7 +87,7 @@ export const siteConfig = {
 
   analytics: {
     /** Google Analytics 4 measurement ID, e.g. G-XXXXXXXX. Leave empty to skip GA. */
-    gaId: "",
+    gaId: "G-CG3V1DNDPR",
     /** Google Search Console verification code. Leave empty to skip. */
     gscVerification: "",
   },
