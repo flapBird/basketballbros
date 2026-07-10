@@ -36,9 +36,21 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const adsenseClientId = siteConfig.ads.clientId;
+
   return (
     <html lang="en" className={`${nunito.variable} ${quicksand.variable}`}>
       <body className="font-body text-text-dark antialiased">
+        {/* Google AdSense — only loaded when client ID is set */}
+        {adsenseClientId && (
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
+
         <Header />
         <main>{children}</main>
         <Footer />

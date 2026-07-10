@@ -1,7 +1,15 @@
 /**
  * Site configuration — the single source of truth for the entire game site.
  * When creating a new game site, only edit this file and replace images in /public.
+ *
+ * Sensitive values (gaId, adsenseClient) are read from environment variables
+ * via getters so they stay out of the compiled bundle when not set.
  */
+
+function env(key: string, fallback = ""): string {
+  return (typeof process !== "undefined" && process.env?.[key]) || fallback;
+}
+
 export const siteConfig = {
   /** Display name shown in header, footer, and browser title. */
   siteName: "Basketball Bros",
@@ -83,11 +91,17 @@ export const siteConfig = {
      * When true, sidebar and rectangle ad slots appear on the page.
      */
     enabled: false,
+    /** AdSense publisher ID — read from NEXT_PUBLIC_ADSENSE_CLIENT_ID env var. */
+    get clientId() {
+      return env("NEXT_PUBLIC_ADSENSE_CLIENT_ID");
+    },
   },
 
   analytics: {
-    /** Google Analytics 4 measurement ID, e.g. G-XXXXXXXX. Leave empty to skip GA. */
-    gaId: "G-CG3V1DNDPR",
+    /** Google Analytics 4 measurement ID — read from NEXT_PUBLIC_GA_ID env var. */
+    get gaId() {
+      return env("NEXT_PUBLIC_GA_ID");
+    },
     /** Google Search Console verification code. Leave empty to skip. */
     gscVerification: "",
   },
