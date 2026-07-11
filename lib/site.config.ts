@@ -19,14 +19,14 @@ export const siteConfig = {
 
   seo: {
     /** Homepage <title>. Used as-is on the homepage. */
-    title: "Basketball Bros - Play Free Online | basketballbros.site",
+    title: "Basketball Bros Game - Play Unblocked Online Free",
 
     /**
      * Homepage meta description, keep under 160 characters.
      * Describe what the game is and that it's free to play online.
      */
     description:
-      "Play Basketball Bros online for free — unblocked! A fast-paced 1v1 arcade basketball game with crazy dunks, 33 unlockable characters, and online multiplayer. No download.",
+      "Play Basketball Bros game online free unblocked. Fast 1v1 basketball action, 33 characters, crazy dunks & multiplayer. No download needed.",
 
     /** Comma-separated keywords for the homepage. */
     keywords: ["basketball bros", "basketbros", "basketball game free", "play basketball bros online", "1v1 basketball", "multiplayer basketball", "basketball bros unblocked"],

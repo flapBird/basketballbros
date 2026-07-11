@@ -51,6 +51,42 @@ const GAME_SECTIONS = [
       { src: "/images/basketballbros-desc-4.jpeg", alt: "Basketball Bros character roster and customization options" },
     ],
   },
+  // NEW: Physics & Dunk Mechanics
+  {
+    id: "dunk-mechanics",
+    heading: "Dunk Physics and Scoring Mechanics",
+    body: [
+      "What sets Basketball Bros apart from other browser basketball games is its surprisingly deep physics engine. Every jump, shot, and block is calculated in real time — the angle you release the ball, the momentum of your player, and even the direction you're moving all affect whether that shot swishes through the net or clanks off the rim. Dunking isn't just a canned animation either: time your approach right, press Up at the peak of your jump, and you'll throw down a monster jam that rattles the backboard.",
+      "Scoring works on a simple but rewarding system. Regular two-point baskets keep the scoreboard ticking, while three-pointers from beyond the arc give you a proper reward for good positioning and timing. Alley-oops and flashy dunks don't just look cool — they can shift the momentum of the match and put your opponent on the back foot. The shot clock keeps things moving too, so there's no standing around: you have to create, attack, and finish before the buzzer.",
+    ],
+    images: [
+      { src: "/images/basketballbros-desc-1.jpeg", alt: "Basketball Bros dunk physics in action" },
+    ],
+  },
+  // NEW: Tips for Beginners
+  {
+    id: "beginner-tips",
+    heading: "Tips for Beginners — Get Good Fast",
+    body: [
+      "If you're stepping onto the court for the first time, here's what you need to know. Start with Shooting Practice mode to get a feel for the timing — the jump-and-release window is tighter than you'd expect, and practicing without pressure makes a huge difference. Once you're comfortable, jump into 1v1 against the AI on the easiest difficulty and focus on defense first: learn to read your opponent's movement and time your blocks before worrying about flashy offense.",
+      "Pay attention to your stamina bar too. Sprinting and jumping drain it fast, and a tired player moves like they're stuck in mud. Pace yourself, pick your moments, and don't be afraid to pull up for a jump shot instead of forcing a drive to the rim. As you win matches, you'll earn coins that unlock new characters and customization items — so even when you lose, focus on improving one thing each game. The skill ceiling is high, but the floor is welcoming.",
+    ],
+    images: [
+      { src: "/images/basketballbros-desc-2.jpeg", alt: "Basketball Bros beginner tips and practice mode" },
+    ],
+  },
+  // NEW: Why Play Online
+  {
+    id: "why-online",
+    heading: "Why Play Basketball Bros Online?",
+    body: [
+      "The real magic of Basketball Bros comes alive when you play against other people. The AI is decent for practice, but nothing beats the unpredictability of a human opponent. Online multiplayer lets you host private matches with friends — just share the room code and you're in — or queue up against random players from around the world. The built-in leaderboard tracks your win record, so there's always a reason to push for one more victory.",
+      "And because the game runs entirely in your browser, there's zero friction. No account creation, no download queue, no waiting for updates. You click, you're in a match, and two minutes later you've either celebrated a buzzer-beater or learned a lesson for the next round. It's pickup basketball, digitized and distilled into its purest form — accessible anywhere, anytime, on almost any computer with an internet connection.",
+    ],
+    images: [
+      { src: "/images/basketballbros-desc-3.jpeg", alt: "Basketball Bros online multiplayer match" },
+    ],
+  },
 ];
 
 function ImagePlaceholder({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
@@ -58,6 +94,7 @@ function ImagePlaceholder({ src, alt, className = "" }: { src: string; alt: stri
     <img
       src={src}
       alt={alt}
+      loading="lazy"
       className={`rounded-xl object-cover bg-surface border border-gray-200/60 shadow-sm ${className}`}
     />
   );
@@ -83,9 +120,9 @@ const PRO_TIPS = [
 ];
 
 const GALLERY_IMAGES = [
-  { alt: "Basketball Bros in-game dunk scene", src: "/images/gallery-1.jpeg" },
-  { alt: "Basketball Bros character selection screen", src: "/images/gallery-2.jpeg" },
-  { alt: "Basketball Bros multiplayer match action", src: "/images/gallery-3.jpeg" },
+  { alt: "Basketball Bros in-game dunk scene", src: "/images/basketballbros-desc-1.jpeg" },
+  { alt: "Basketball Bros character selection screen", src: "/images/basketballbros-desc-2.jpeg" },
+  { alt: "Basketball Bros multiplayer match action", src: "/images/basketballbros-desc-3.jpeg" },
 ];
 
 export default function HomePage() {
