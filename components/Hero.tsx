@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Screen-reader-only H1 for SEO — contains primary keyword */}
         <h1 className="sr-only">
-          {siteConfig.siteName} — Play Basketball Bros Online Free, Unblocked 1v1 Basketball Game
+          Basketball Bros Game - Play Online Free
         </h1>
         <GameEmbed />
       </div>
