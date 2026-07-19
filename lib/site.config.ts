@@ -77,7 +77,7 @@ export const siteConfig = {
 
   contact: {
     /** Contact email shown on /contact and in legal pages. */
-    email: "hello@basketballbros.site",
+    email: "contact@basketballbros.site",
   },
 
   legal: {
